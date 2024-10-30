@@ -1,4 +1,6 @@
-﻿namespace ChatPuccino
+﻿using ChatPuccino.Views;
+
+namespace ChatPuccino
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new LandingPage();
         }
     }
 }

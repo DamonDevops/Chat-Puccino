@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#512BD4</color>
-    <color name="colorPrimaryDark">#2B0B98</color>
-    <color name="colorAccent">#2B0B98</color>
+    <color name="colorPrimary">#ffc2d1</color>
+    <color name="colorPrimaryDark">#fb6f92</color>
+    <color name="colorAccent">#fb6f92</color>
+	<color name="BGBeige">#FFE5EC</color>
+	<color name="LightPink">#ffc2d1</color>
+	<color name="MainPink">#ff8fab</color>
+	<color name="DarkPink">#fb6f92</color>
 </resources>

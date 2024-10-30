@@ -42,4 +42,15 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <Color x:Key="BGBeige">#FFE5EC</Color>
+    <Color x:Key="LightPink">#ffc2d1</Color>
+    <Color x:Key="MainPink">#ff8fab</Color>
+    <Color x:Key="DarkPink">#fb6f92</Color>
+
+    <SolidColorBrush x:Key="BGBeigeBrush" Color="#FFE5EC"/>
+    <SolidColorBrush x:Key="LightPinkBrush" Color="#ffc2d1"/>
+    <SolidColorBrush x:Key="MainPinkBrush" Color="#ff8fab"/>
+    <SolidColorBrush x:Key="DarkPinkBrush" Color="#fb6f92"/> 
+
 </ResourceDictionary>

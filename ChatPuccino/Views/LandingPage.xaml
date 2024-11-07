@@ -2,25 +2,59 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="ChatPuccino.Views.LandingPage"
              NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="main_bg.jpg">
     
-    <Grid RowDefinitions="auto, auto, *" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="32" Margin="20,40,20,0">
-        <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
-            <Border Grid.Row="0" Opacity="0.5" BackgroundColor="{StaticResource LightPink}" StrokeShape="RoundRectangle 15,15,15,15" StrokeThickness="2" Stroke="{StaticResource DarkPink}"/>
-            <Grid HorizontalOptions="Center">
-                <VerticalStackLayout>
-                    <skia:SKLottieView
-                        Source="main_logo.json"
-                        RepeatCount="-1"
-                        RepeatMode="Reverse"
-                        HeightRequest="150"
-                        WidthRequest="150"
-                        />
-                    <Label Text="Chat Puccino" FontSize="40" FontAttributes="Bold"></Label>
-                </VerticalStackLayout>
+    <Grid RowDefinitions="auto, *, auto" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid Grid.Row="0" HeightRequest="150">
+            <Border Grid.Row="0" Opacity="0.5" BackgroundColor="{StaticResource LightPink}" StrokeShape="RoundRectangle 0,0,15,15" StrokeThickness="2" Stroke="{StaticResource DarkPink}"/>
+            <Grid ColumnDefinitions="*, auto" VerticalOptions="Center">
+                <skia:SKLottieView
+                    Source="main_logo.json"
+                    RepeatCount="-1"
+                    RepeatMode="Reverse"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    HorizontalOptions="Start"
+                    />
+                <Label Text="Chat Puccino" FontSize="40" FontAttributes="Bold" FontFamily="CoffeeDream" TextColor="White" HorizontalOptions="End" VerticalOptions="End" Padding="5"></Label>
             </Grid>
+        </Grid>
+
+        <Grid x:Name="ToAppBtn" Grid.Row="1" HorizontalOptions="End" HeightRequest="100">
+            <Border Opacity="0.5" BackgroundColor="{StaticResource LightPink}" StrokeShape="RoundRectangle 32,0,32,0" StrokeThickness="2" Stroke="{StaticResource DarkPink}"/>
+            <Grid ColumnDefinitions="*, auto" VerticalOptions="Center" WidthRequest="200" Padding="15">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToMenuCommand}"/>
+                </Grid.GestureRecognizers>
+                <Label Text="Decouvrir" FontSize="25" FontFamily="CoffeeDream" TextColor="White" HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Image Source="next_icon.svg" WidthRequest="36" HeightRequest="36" HorizontalOptions="End" VerticalOptions="Center">
+                    <Image.Behaviors>
+                        <toolkit:IconTintColorBehavior TintColor="White"/>
+                    </Image.Behaviors>
+                </Image>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Border Opacity="0.5" BackgroundColor="{StaticResource LightPink}" StrokeShape="RoundRectangle 15,15,0,0" StrokeThickness="2" Stroke="{StaticResource DarkPink}"/>
+            <VerticalStackLayout Padding="30" HorizontalOptions="FillAndExpand">
+                <Label Text="Ouvertures" FontSize="30" FontAttributes="Bold" FontFamily="CoffeeDream" TextColor="White"/>
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Center" ColumnDefinitions="*, auto">
+                    <Label Text="Lundi" FontSize="20" HorizontalTextAlignment="Start" FontAttributes="Bold" FontFamily="CoffeeDream" TextColor="White"/>
+                    <Label Text="Jour de fermeture" FontSize="20" HorizontalTextAlignment="End" HorizontalOptions="End" FontAttributes="Bold" TextColor="White"/>
+                </Grid>
+                <Grid ColumnDefinitions="*, auto">
+                    <Label Text="Mardi &#10;au Vendredi" FontSize="20" HorizontalTextAlignment="Start" FontAttributes="Bold" FontFamily="CoffeeDream" TextColor="White"/>
+                    <Label Text="9:00~13:00&#10;14:00~18:00" FontSize="20" HorizontalTextAlignment="End" HorizontalOptions="End" FontAttributes="Bold" TextColor="White"/>
+                </Grid>
+                <Grid VerticalOptions="Center" ColumnDefinitions="*, auto">
+                    <Label Text="Samedi &#10;et Dimanche" FontSize="20" HorizontalTextAlignment="Start" FontAttributes="Bold" FontFamily="CoffeeDream" TextColor="White"/>
+                    <Label Text="8:00~12:00&#10;14:00~20:00" FontSize="20" HorizontalTextAlignment="End" HorizontalOptions="End" FontAttributes="Bold" TextColor="White"/>
+                </Grid>
+            </VerticalStackLayout>
         </Grid>
     </Grid>
     

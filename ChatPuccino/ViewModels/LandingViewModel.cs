@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChatPuccino.Views;
+using CommunityToolkit.Mvvm.Input;
 
-namespace ChatPuccino.ViewModels
+namespace ChatPuccino.ViewModels;
+
+public partial class LandingViewModel : BaseViewModel
 {
-    internal class LandingViewModel
+    [RelayCommand]
+    async Task GoToMenu()
     {
+        await Shell.Current.GoToAsync($"//{nameof(MenuPage)}");
     }
 }

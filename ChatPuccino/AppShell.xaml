@@ -3,13 +3,39 @@
     x:Class="ChatPuccino.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ChatPuccino"
+    xmlns:pages="clr-namespace:ChatPuccino.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="ChatPuccino">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate pages:LandingPage}"
+        Route="LandingPage" />
+    
+    <TabBar>
+        <ShellContent
+            Title="Menu"
+            Icon="coffee_tab"
+            ContentTemplate="{DataTemplate pages:MenuPage}"
+            Route="MenuPage" />
+        
+        <ShellContent
+            Title="Table"
+            Icon="command_tab"
+            ContentTemplate="{DataTemplate pages:TablePage}"
+            Route="TablePage" />
+        
+        <ShellContent
+            Title="Cats"
+            Icon="cat_tab"
+            ContentTemplate="{DataTemplate pages:CatsPage}"
+            Route="CatsPage" />
 
+        <ShellContent
+            Title="About"
+            Icon="about_tab"
+            ContentTemplate="{DataTemplate pages:AboutPage}"
+            Route="AboutPage" />
+    </TabBar>
+    
 </Shell>

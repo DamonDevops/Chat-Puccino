@@ -20,6 +20,12 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("CoffeeDreamDemoRegular.ttf", "CoffeeDream");
+            })
+            .ConfigureMauiHandlers(handlers =>
+            {
+                #if ANDROID
+                handlers.AddHandler(typeof(Shell), typeof(Platforms.Android.CommandBadgeRenderer));
+                #endif
             });
 
 #if DEBUG

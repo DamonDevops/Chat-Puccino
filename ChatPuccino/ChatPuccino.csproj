@@ -67,6 +67,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Components\" />
+	  <Folder Include="Resources\Images\Consumables\" />
 	</ItemGroup>
 
 	<ItemGroup>
